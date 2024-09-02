@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, Image, SafeAreaView } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigation/types';
 
@@ -30,6 +30,7 @@ class SplashScreen extends Component<Props, State> {
     const { buttonClicked } = this.state;
 
     return (
+      <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground style={{ flex: 1 }} source={require("../assets/GroupBackground.png")}>
         {buttonClicked ? (
           <View style={styles.container}>
@@ -57,6 +58,7 @@ class SplashScreen extends Component<Props, State> {
           </View>
         )}
       </ImageBackground>
+      </SafeAreaView>
     );
   }
 }
